@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="900" height="560" fill="#fbfaf6"/>
+  <style>
+    .box { fill: #ffffff; stroke: #2b2d31; stroke-width: 1.6; rx: 8; }
+    .title { font-weight: 600; font-size: 14px; fill: #1c1d1f; }
+    .pin { font-family: Consolas, Menlo, monospace; font-size: 12px; fill: #1c1d1f; }
+    .note { font-size: 12px; fill: #55575c; }
+    .w { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .sig1 { stroke: #d9822b; } .sig2 { stroke: #2f7fb5; } .sig3 { stroke: #8a4fb8; }
+    .stp { stroke: #2f8f5b; } .vcc { stroke: #c0392b; } .gnd { stroke: #2b2d31; }
+  </style>
+
+  <!-- Fuente 5 V -->
+  <rect class="box" x="330" y="24" width="240" height="64"/>
+  <text class="title" x="450" y="50" text-anchor="middle">Fuente 5 V · 2 A (o más)</text>
+  <text class="pin" x="370" y="74">+5V</text>
+  <text class="pin" x="500" y="74">GND</text>
+
+  <!-- ESP32 -->
+  <rect class="box" x="40" y="150" width="210" height="330"/>
+  <text class="title" x="145" y="176" text-anchor="middle">ESP32 WROOM-32</text>
+  <text class="pin" x="60" y="220">GPIO13</text>
+  <text class="pin" x="60" y="260">GPIO14</text>
+  <text class="pin" x="60" y="300">GPIO27</text>
+  <text class="pin" x="60" y="350">GPIO26</text>
+  <text class="pin" x="60" y="375">GPIO25</text>
+  <text class="pin" x="60" y="400">GPIO33</text>
+  <text class="pin" x="60" y="425">GPIO32</text>
+  <text class="pin" x="60" y="462">GND</text>
+  <text class="note" x="145" y="505" text-anchor="middle">Se alimenta por USB</text>
+
+  <!-- Servos -->
+  <rect class="box" x="640" y="150" width="220" height="44"/>
+  <text class="title" x="656" y="177">SG90 · Garra</text>
+  <rect class="box" x="640" y="214" width="220" height="44"/>
+  <text class="title" x="656" y="241">SG90 · Vertical</text>
+  <rect class="box" x="640" y="278" width="220" height="44"/>
+  <text class="title" x="656" y="305">SG90 · Horizontal</text>
+  <text class="note" x="650" y="342">Cable naranja = señal · rojo = +5V · café = GND</text>
+
+  <!-- ULN2003 + 28BYJ-48 -->
+  <rect class="box" x="420" y="330" width="150" height="140"/>
+  <text class="title" x="495" y="355" text-anchor="middle">ULN2003</text>
+  <text class="pin" x="432" y="380">IN1</text>
+  <text class="pin" x="432" y="405">IN2</text>
+  <text class="pin" x="432" y="430">IN3</text>
+  <text class="pin" x="432" y="455">IN4</text>
+  <text class="pin" x="535" y="380">+</text>
+  <text class="pin" x="535" y="455">−</text>
+  <rect class="box" x="660" y="380" width="200" height="64"/>
+  <text class="title" x="760" y="408" text-anchor="middle">28BYJ-48 (base)</text>
+  <text class="note" x="760" y="428" text-anchor="middle">conector blanco de 5 hilos</text>
+  <path class="w gnd" d="M570 412 H660" stroke-dasharray="6 4"/>
+
+  <!-- Señales servos -->
+  <path class="w sig1" d="M118 216 H600 V172 H640"/>
+  <path class="w sig2" d="M118 256 H610 V236 H640"/>
+  <path class="w sig3" d="M118 296 H620 V300 H640"/>
+
+  <!-- Señales stepper -->
+  <path class="w stp" d="M118 346 H380 V376 H430"/>
+  <path class="w stp" d="M118 371 H370 V401 H430"/>
+  <path class="w stp" d="M118 396 H360 V426 H430"/>
+  <path class="w stp" d="M118 421 H350 V451 H430"/>
+
+  <!-- +5V -->
+  <path class="w vcc" d="M385 88 V120 H880 V312 H860"/>
+  <path class="w vcc" d="M880 184 H860 M880 248 H860"/>
+  <path class="w vcc" d="M880 312 V366 H580 V376 H550"/>
+
+  <!-- GND común -->
+  <path class="w gnd" d="M515 88 V108 H890 V190"/>
+  <path class="w gnd" d="M890 164 V520 H560 V451 H550"/>
+  <path class="w gnd" d="M890 164 H860 M890 228 H860 M890 292 H860"/>
+  <path class="w gnd" d="M560 520 H24 V458 H40"/>
+  <text class="note" x="300" y="540">GND común: la fuente, el ESP32, los servos y el ULN2003 deben compartir tierra.</text>
+</svg>

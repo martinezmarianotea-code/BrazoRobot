@@ -1,0 +1,25 @@
+# Dependencias y builds
+node_modules/
+.expo/
+dist/
+web-build/
+app/android/
+app/ios/
+
+# Firmware
+firmware/**/build/
+
+# Secretos de firma
+*.jks
+*.keystore
+*.p8
+*.p12
+*.key
+*.pem
+.env*
+
+# Logs y sistema
+*.log
+.DS_Store
+.vscode/
+.idea/
